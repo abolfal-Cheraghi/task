@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #ffffff;
+}
+
+/* scroll bar */
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: #070b13;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #2d3a49;
+  border-radius: 10px;
+}
+
+@layer utilities {
+  .title {
+    @apply font-semibold  text-2xl sm:text-[40px] lg:text-[50px]  leading-[36px] sm:leading-[50px] lg:leading-[60px]  text-center;
+  }
+
+  .text-gradient-sky {
+    background: linear-gradient(to right, #5ec2ee, white);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @apply py-1;
+  }
+  .gradient-to-bottom {
+    @apply bg-gradient-to-b from-accent to-transparent;
+  }
+  .gradient-to-top {
+    @apply bg-gradient-to-t from-accent to-transparent;
+  }
+  .gradient-radial-black {
+    background-image: radial-gradient(
+      rgba(0, 0, 0, 0.647),
+      rgba(0, 0, 0, 0.268)
+    );
+  }
+
+  .shadow-input {
+    box-shadow: 0 0 0 0.17px #c6c6c660, 0 0 25px rgba(255, 255, 255, 0.15) !important  ;
+    border: none !important;
+    outline: none !important;
+    @apply placeholder:text-[#757575];
+  }
+  .shadow-input:focus {
+    @apply text-white;
+  }
+  .active-tab {
+    @apply border-b-4 border-sky-blue;
+    background: linear-gradient(to top, #5ec2ee20 5%, transparent 60%);
+  }
+}
